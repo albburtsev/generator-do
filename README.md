@@ -1,7 +1,6 @@
 # generator-do [![Build Status](https://secure.travis-ci.org/albburtsev/generator-do.png?branch=master)](https://travis-ci.org/albburtsev/generator-do)
 
-A generator for [Yeoman](http://yeoman.io).
-
+Front-end stuff generator for [Yeoman](http://yeoman.io).
 
 ## Getting Started
 
@@ -11,7 +10,13 @@ At first you need install Yeoman:
 $ npm install -g yo
 ```
 
-Install generator-do from npm, run:
+Install locally ```generator-do``` from npm, run:
+
+```
+$ npm install generator-do
+```
+
+Or install global ```generator-do``` with ```-g```:
 
 ```
 $ npm install -g generator-do
@@ -25,13 +30,7 @@ $ yo do
 
 ## Sub-generators
 
-### html
-
-Creates simple HTML file:
-
-```
-yo do:html
-```
+ * [html](html/) - creates a simple HTML file
 
 ## License
 
