@@ -1,30 +1,40 @@
+/**
+ * DoGenerator class, entry point of project
+ * @author Alexander Burtsev http://burtsev.me
+ * @see {@link https://github.com/albburtsev/generator-do}
+ */
+
 'use strict';
 
 var util = require('util'),
-	path = require('path'),
-	chalk = require('chalk'),
-	yeoman = require('yeoman-generator'),
-	grunt = require('grunt');
+	Root = require('../root');
 
+/**
+ * Generator for ```yo do``` interface
+ * @name DoGenerator
+ * @since 0.0.0
+ * @param {Object} args
+ * @param {Object} options
+ * @param {Object} config
+ * @augments Root
+ */
 var DoGenerator = function(args, options, config) {
-	yeoman.generators.Base.apply(this, arguments);
-
-	this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
-
-	// Set root path and path to templates
-	this.rootPath = path.join(__dirname, '..');
-	this.sourceRoot(path.join(this.rootPath, 'templates'));
+	Root.apply(this, arguments);
 };
 
-util.inherits(DoGenerator, yeoman.generators.Base);
+util.inherits(DoGenerator, Root);
 
-DoGenerator.prototype.printHelp = function askFor() {
-	console.log('\nCommand ' + chalk.green('yo do') + ' do nothing. Or not?');
-	console.log('It is only help. List of available sub-generators:\n');
+/**
+ * Prints help about sub-generators
+ * @since 0.0.0
+ */
+DoGenerator.prototype.printHelp = function() {
+	this.log('\nCommand ```yo do``` do nothing. Or not?');
+	this.log('It is only help. List of available sub-generators:\n');
 
 	// @todo: automatic generation subtask list
-	console.log(chalk.green('yo do:html') + ' - creates simple HTML file');
-	console.log('\nRun ' + chalk.green('npm update -g generator-do') + ' to get more generators!');
-}
+	this.log(' * ```yo do:html``` - creates a simple HTML file');
+	this.log('\nRun ```npm update -g generator-do``` to get more generators!');
+};
 
 module.exports = DoGenerator;

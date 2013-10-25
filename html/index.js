@@ -1,18 +1,35 @@
+/**
+ * DoGenerator class, entry point of project
+ * @author Alexander Burtsev http://burtsev.me
+ * @see {@link https://github.com/albburtsev/generator-do/tree/master/html}
+ */
+
 'use strict';
 
-var _ = require('lodash'),
-	util = require('util'),
-	BaseGenerator = require('../app/index');
+var util = require('util'),
+	Root = require('../app/index');
 
-
+/**
+ * Generator for ```yo do:html``` interface
+ * @name HtmlGenerator
+ * @since 0.0.0
+ * @param {Object} args
+ * @param {Object} options
+ * @param {Object} config
+ * @augments Root
+ */
 var HtmlGenerator = function(args, options, config) {
-	BaseGenerator.apply(this, arguments);
+	Root.apply(this, arguments);
 	console.log('You called the html subgenerator:\n');
 };
 
-util.inherits(HtmlGenerator, BaseGenerator);
+util.inherits(HtmlGenerator, Root);
 
-HtmlGenerator.prototype.askFor = function askFor() {
+/**
+ * Prompts for HTML file creating
+ * @since 0.0.0
+ */
+HtmlGenerator.prototype.askFor = function() {
 	var	done = this.async(),
 		prompts = [{
 			name: 'filename',
@@ -35,12 +52,16 @@ HtmlGenerator.prototype.askFor = function askFor() {
 		}];
 
 	this.prompt(prompts, function(props) {
-		_.extend(this, props);
+		this._.extend(this, props);
 		done();
 	}.bind(this));
 }
 
-HtmlGenerator.prototype.files = function files() {
+/**
+ * Creates file from template
+ * @since 0.0.0
+ */
+HtmlGenerator.prototype.files = function() {
 	this.template('index.html', this.filename + '.html');
 };
 
