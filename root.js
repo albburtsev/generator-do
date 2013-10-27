@@ -6,7 +6,7 @@
 
 'use strict';
 
-var util = require('util'),
+var	util = require('util'),
 	path = require('path'),
 	chalk = require('chalk'),
 	yeoman = require('yeoman-generator');
@@ -30,7 +30,7 @@ var Root = function(args, options, config) {
 	this.rootPath = path.join(__dirname);
 	this.sourceRoot(path.join(this.rootPath, 'templates'));
 
-	// Save origin logging method
+	// Save original logging method
 	this.originLog = Root.super_.prototype.log;
 };
 
@@ -45,15 +45,9 @@ util.inherits(Root, yeoman.generators.Base);
  * this.log('Command ```yo do``` do nothing. Or not?');
  */
 Root.prototype.log = function(msg) {
-	var chunks = (msg || '').split('```'),
-		chunksCount = chunks.length;
-
-	if ( chunksCount > 1 && chunksCount % 2 ) {
-		msg = chunks.reduce(function(joined, chunk, idx) {
-			joined += idx % 2 ? chalk.green(chunk) : chunk;
-			return joined;
-		}, '');
-	}
+	msg = (msg || '').replace(/```(.*?)```/g, function(matched, command) {
+		return chalk.green(command);
+	});
 
 	arguments[0] = msg;
 	this.originLog.apply(this, arguments);

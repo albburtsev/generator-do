@@ -1,5 +1,5 @@
 /**
- * DoGenerator class, entry point of project
+ * HtmlGenerator
  * @author Alexander Burtsev http://burtsev.me
  * @see {@link https://github.com/albburtsev/generator-do/tree/master/html}
  */
@@ -7,7 +7,7 @@
 'use strict';
 
 var util = require('util'),
-	Root = require('../app/index');
+	Root = require('../root');
 
 /**
  * Generator for ```yo do:html``` interface
@@ -20,7 +20,7 @@ var util = require('util'),
  */
 var HtmlGenerator = function(args, options, config) {
 	Root.apply(this, arguments);
-	console.log('You called the html subgenerator:\n');
+	this.log('You called the ```do:html``` sub-generator:\n');
 };
 
 util.inherits(HtmlGenerator, Root);
