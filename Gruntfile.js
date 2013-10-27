@@ -10,15 +10,20 @@ module.exports = function(grunt) {
 			options: {
 				jshintrc: '.jshintrc'
 			},
-			app: ['**/index.js', '!node_modules/**'],
+			files: ['**/index.js', '!node_modules/**'],
 		},
+
+		jscs: {
+			files: ['<%= jshint.files %>']
+		},
+
 		watch: {
 			app: {
-				files: ['**/index.js'],
-				tasks: ['jshint']
+				files: ['<%= jshint.files %>'],
+				tasks: ['jshint', 'jscs']
 			}
 		}
 	});
 
-	grunt.registerTask('default', ['jshint', 'watch']);
+	grunt.registerTask('default', ['jshint', 'jscs', 'watch']);
 };
