@@ -31,6 +31,7 @@ $ yo do
 ## Sub-generators
 
  * [html](html/) - creates a simple HTML file
+ * [sub](sub/) - creates new sub-generator
 
 ## License
 

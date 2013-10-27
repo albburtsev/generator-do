@@ -55,7 +55,7 @@ HtmlGenerator.prototype.askFor = function() {
 		this._.extend(this, props);
 		done();
 	}.bind(this));
-}
+};
 
 /**
  * Creates file from template
