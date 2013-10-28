@@ -1,5 +1,7 @@
-{
-	"node": true,
+{<% if ( isNode ) { %>
+	"node": true,<% } else { %>
+	"browser": true,
+	"jquery": true,<% } %>
 	"smarttabs": false,
 	"eqeqeq": true,
 	"immed": true,
