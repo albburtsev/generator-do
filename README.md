@@ -32,6 +32,7 @@ $ yo do
 
  * [html](html/) - creates a simple HTML file
  * [sub](sub/) - creates new sub-generator
+ * [gitignore](gitignore/) - creates ```.gitignore``` file with default ignoring list
 
 ## License
 

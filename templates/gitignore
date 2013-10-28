@@ -1,0 +1,24 @@
+# Python stuff
+*.pyc
+
+# Installed NPM modules
+node_modules/
+
+# Installed bower packages
+bower_components/
+
+# Compass stuff
+.sass-cache/
+
+# Logs and pid-files
+*.log
+*.pid
+
+# OS generated files
+._*
+.Trashes
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# And more: https://github.com/github/gitignore

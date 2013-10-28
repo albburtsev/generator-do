@@ -41,4 +41,12 @@ util.inherits(<%= className %>, Root);
 };
 <% } %>
 
+/**
+ * Creates files from templates
+ * @since <%= pkg.version %>
+ */
+<%= className %>.prototype.files = function() {
+	// @todo
+};
+
 module.exports = <%= className %>;
