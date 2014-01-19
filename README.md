@@ -32,7 +32,6 @@ $ yo do
 
  * [html](html/) - creates a simple HTML file
  * [sub](sub/) - creates new sub-generator
- * [gitignore](gitignore/) - creates ```.gitignore``` file with default ignoring list
  * [js](js/) - creates a simple .js file with optional banner and AMD-wrapper
  * [cs](cs/) - code style generator, creates .jshintrc and .jscs.json
 
