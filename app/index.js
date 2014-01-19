@@ -7,7 +7,9 @@
 'use strict';
 
 var util = require('util'),
-	Root = require('../root');
+	Root = require('../root'),
+	path = require('path'),
+	fs = require('fs');
 
 /**
  * Generator for ```yo do``` interface
@@ -29,11 +31,29 @@ util.inherits(DoGenerator, Root);
  * @since 0.0.0
  */
 DoGenerator.prototype.printHelp = function() {
+	var yodoRoot = path.join(__dirname, '..'),
+		yodoFiles = fs.readdirSync(yodoRoot);
+
 	this.log('\nCommand ```yo do``` do nothing. Or not?');
 	this.log('It is only help. List of available sub-generators:\n');
 
-	// @todo: automatic generation subtask list
-	this.log(' * ```yo do:html``` - creates a simple HTML file');
+	yodoFiles.forEach((function(dirname) {
+		dirname = path.join(yodoRoot, dirname);
+		if ( fs.statSync(dirname).isDirectory() ) {
+			var indexFile = path.join(dirname, 'index.js'),
+				readmeFile = path.join(dirname, 'README.md'),
+				readmeText, readmeMatched,
+				readmeRe = /\#\s+(.*?)\n\n(.*?)\.\n/im;
+
+			if ( fs.existsSync(indexFile) && fs.existsSync(readmeFile) ) {
+				readmeText = fs.readFileSync(readmeFile, { encoding: 'utf8' });
+				if ( readmeMatched = readmeText.match(readmeRe) ) {
+					this.log(' * ```' + readmeMatched[1] + '``` - ' + readmeMatched[2].toLowerCase());
+				}
+			}
+		}
+	}).bind(this));
+
 	this.log('\nRun ```npm update -g generator-do``` to get more generators!');
 };
 

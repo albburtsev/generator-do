@@ -1,6 +1,6 @@
 # do:sub
 
-Generator of sub-generators :trollface:
+Generator of sub-generators :trollface:.
 
 ```
 $ yo do:sub

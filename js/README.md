@@ -1,6 +1,6 @@
 # do:js
 
-Creates a simple .js file with optional banner and AMD-wrapper
+Creates a simple ```.js``` file with optional banner and AMD-wrapper.
 
 ```
 $ yo do:js

@@ -1,6 +1,6 @@
 # do:cs
 
-Code style generator, creates .jshintrc and .jscs.json
+Code style generator, creates ```.jshintrc``` and ```.jscs.json```.
 
 ```
 $ yo do:cs
