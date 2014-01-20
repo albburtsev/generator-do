@@ -30,10 +30,11 @@ $ yo do
 
 ## Sub-generators
 
- * [html](html/) - creates a simple HTML file
- * [sub](sub/) - creates new sub-generator
- * [js](js/) - creates a simple .js file with optional banner and AMD-wrapper
- * [cs](cs/) - code style generator, creates .jshintrc and .jscs.json
+ * [html](html/) – creates a simple HTML file
+ * [sub](sub/) – creates new sub-generator
+ * [js](js/) – creates a simple ```.js``` file with optional banner and AMD-wrapper
+ * [cs](cs/) – code style generator, creates ```.jshintrc``` and ```.jscs.json```
+ * [jq-plugin](jq-plugin/) – creates ```.js``` file for jQuery plugin
 
 ## License
 
