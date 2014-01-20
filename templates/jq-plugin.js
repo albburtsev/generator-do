@@ -1,6 +1,8 @@
 /**
  * <%= description %>
  * 
+ * @version 0.0.0
+ * @requires jQuery
  * @author <%= pkg.author && pkg.author.name || pkg.author || ''  %>
  * @copyright <%= (new Date).getFullYear() %> <%= pkg.author && pkg.author.name || pkg.author || ''  %>
  * @license MIT

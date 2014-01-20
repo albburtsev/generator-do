@@ -34,7 +34,7 @@ JqPluginGenerator.prototype.askFor = function() {
 	var	done = this.async(),
 		prompts = [{
 			name: 'name',
-			message: 'Plugin file prefix (without .jquery.js)',
+			message: 'Plugin file prefix (only name, without "jquery." or ".js")',
 			default: 'plugin'
 		}, {
 			name: 'method',
@@ -60,7 +60,7 @@ JqPluginGenerator.prototype.askFor = function() {
  * @since 0.0.1
  */
 JqPluginGenerator.prototype.files = function() {
-	this.template('jq-plugin.js', this.name + '.jquery.js');
+	this.template('jq-plugin.js', 'jquery.' + this.name + '.js');
 };
 
 module.exports = JqPluginGenerator;
