@@ -1,6 +1,6 @@
 # do:<%= name %>
 
-<%= description %>
+<%= description %>.
 
 ```
 $ yo do:<%= name %>

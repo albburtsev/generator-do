@@ -48,7 +48,7 @@ DoGenerator.prototype.printHelp = function() {
 			if ( fs.existsSync(indexFile) && fs.existsSync(readmeFile) ) {
 				readmeText = fs.readFileSync(readmeFile, { encoding: 'utf8' });
 				if ( readmeMatched = readmeText.match(readmeRe) ) {
-					this.log(' * ```' + readmeMatched[1] + '``` - ' + readmeMatched[2].toLowerCase());
+					this.log(' * ```yo ' + readmeMatched[1] + '``` - ' + readmeMatched[2].toLowerCase());
 				}
 			}
 		}
