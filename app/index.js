@@ -46,7 +46,7 @@ DoGenerator.prototype.printHelp = function() {
 				readmeRe = /\#\s+(.*?)\n\n(.*?)\.\n/im;
 
 			if ( fs.existsSync(indexFile) && fs.existsSync(readmeFile) ) {
-				readmeText = fs.readFileSync(readmeFile, { encoding: 'utf8' });
+				readmeText = fs.readFileSync(readmeFile, 'utf8');
 				if ( readmeMatched = readmeText.match(readmeRe) ) {
 					this.log(' * ```yo ' + readmeMatched[1] + '``` - ' + readmeMatched[2].toLowerCase());
 				}

@@ -35,6 +35,7 @@ $ yo do
  * [js](js/) – creates a simple ```.js``` file with optional banner and AMD-wrapper
  * [cs](cs/) – code style generator, creates ```.jshintrc``` and ```.jscs.json```
  * [jq-plugin](jq-plugin/) – creates ```.js``` file for jQuery plugin
+ * [nginx-site](nginx-site/) – creates nginx config for site
 
 ## License
 
