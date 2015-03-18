@@ -1,6 +1,6 @@
 {
   "name": "generator-do",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Front-end stuff generator for Yeoman",
   "keywords": [
     "yeoman-generator"
