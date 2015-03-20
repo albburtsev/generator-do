@@ -1,7 +1,5 @@
 'use strict';
 
-require('./<%= name %>.styl');
-
 var b = Block('<%= className %>');
 
 /**
