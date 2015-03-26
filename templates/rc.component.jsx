@@ -1,18 +1,16 @@
-'use strict';
-
-var b = Block('<%= className %>');
+let b = Block('<%= className %>');
 
 /**
  * <%= name %> component
  */
-var <%= name %> = React.createClass({
-    render: function() {
+class <%= name %> extends React.Component {
+    render() {
         return (
             <div className={b}>
                 Content of component «<%= name %>»
             </div>
         );
     }
-});
+}
 
 module.exports = <%= name %>;
