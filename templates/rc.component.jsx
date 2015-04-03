@@ -1,9 +1,23 @@
-let b = Block('<%= className %>');
+var b = Block('<%= className %>');
 
 /**
  * <%= name %> component
  */
-class <%= name %> extends React.Component {
+var <%= name %> = React.createClass({
+    getDefaultProps() {
+        return {
+            // @todo
+        };
+    },
+
+    getInitialState() {
+        return this.getStateFromStores();
+    },
+
+    getStateFromStores() {
+        return {};
+    },
+
     render() {
         return (
             <div className={b}>
@@ -11,6 +25,6 @@ class <%= name %> extends React.Component {
             </div>
         );
     }
-}
+});
 
-module.exports = <%= name %>;
+export default <%= name %>;
